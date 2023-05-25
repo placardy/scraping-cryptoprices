@@ -17,6 +17,4 @@ for coin in result["data"]:
     name_soup = name_soup.find(class_="coin-name").text
     price_soup = BeautifulSoup(coin["price_usd"], "lxml")
     price_soup = price_soup.find_all("span")[-1].text
-    fiat_soup = BeautifulSoup(coin["price_usd"], "lxml")
-    fiat_soup = fiat_soup.find(class_="fiat-symbol").text
-    print(f"{name_soup}: {price_soup}{fiat_soup}")
+    print(f"{name_soup}: {price_soup}")
